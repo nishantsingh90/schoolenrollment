@@ -25,7 +25,7 @@ SECRET_KEY = '%-^vrb=+=pkvs_4ex$!8ek2cpm=q&l^!r@gcpg34f*z@7pc4s_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nishantsingh910.pythonanywhere.com']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'enrol',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'schoolenrol.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates',)],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,6 +81,20 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'cbnxtinfoserve$corporatebanker',
+#         'USER': 'cbnxtinfoserve',
+#         'PASSWORD': 'nishant421',
+#         'HOST': 'nishantsingh910.mysql.pythonanywhere-services.com',
+#         'OPTIONS': {
+#             'sql_mode': 'STRICT_TRANS_TABLES',
+#         }
+#     }
+# }
 
 
 # Password validation
@@ -118,3 +134,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = '/home/nishantsingh910/schoolenrol/static'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+TIME_ZONE =  'Asia/Kolkata'
